@@ -39,7 +39,7 @@ This app is styled as if you are writing in a composition notebook. I wanted the
 * N/A
 
 * You can view the repository:
-[Github.com](https://github.com/Gr8ness21/thekickstandapp)
+[Github.com](https://github.com/Tann0903/Its-All-Write)
     
 ## Works Cited:
 * Routes

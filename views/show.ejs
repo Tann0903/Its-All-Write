@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html>
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= journal.subject %></title>
-  <link rel="stylesheet" href="/css/app.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= journal ? journal.subject : 'Journal Not Found' %></title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-  <h1><%= journal.subject %></h1>
-  <p><strong>DATE:</strong> <%= journal.date %></p>
-  <p><strong>TIME:</strong> <%= journal.time %></p>
-  <p><strong>MOOD:</strong> <%= journal.mood %></p>
-  <p><strong>SONG:</strong> <%= journal.song %></p>
-  <p><strong>ENTRY:</strong></p>
-  <textarea class="notebook-textarea" readonly><%= journal.entry %></textarea>
-  <br>
-  <a href="/journals/<%= journal._id %>/edit">Edit</a>
-  
-  <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
-    <button type="submit">Delete</button>
-  </form>
-  <div class="button-container">
-  <a href="/journals">Back to all entries</a></div>
+    <% if (journal) { %>
+        <h1><%= journal.subject %></h1>
+        <p><strong>DATE:</strong> <%= journal.date %></p>
+        <p><strong>TIME:</strong> <%= journal.time %></p>
+        <p><strong>MOOD:</strong> <%= journal.mood %></p>
+        <p><strong>SONG:</strong> <%= journal.song %></p>
+        <p><strong>ENTRY:</strong></p>
+        <textarea class="notebook-textarea" readonly><%= journal.entry %></textarea>
+        <br>
+        <a href="/journals/<%= journal._id %>/edit">Edit</a>
+        
+        <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+        <div class="button-container">
+            <a href="/journals">Back to all entries</a>
+        </div>
+    <% } else { %>
+        <h1>Journal Not Found</h1>
+    <% } %>
 </body>
 </html>

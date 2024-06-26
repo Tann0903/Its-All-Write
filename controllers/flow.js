@@ -47,13 +47,16 @@ router.get('/journals', async (req, res) => {
 // SHOW
 router.get('/journals/:id', async (req, res) => {
     try {
-        const journal = await Journal.findById(req.params.id);
-        res.render('show', { journal });
+      const journal = await Journal.findById(req.params.id);
+      if (!journal) {
+        return res.status(404).send('Journal not found');
+      }
+      res.render('show', { journal });
     } catch (err) {
-        console.error(err);
-        res.send('Error retrieving journal entry');
+      console.error(err);
+      res.status(500).send('Error retrieving journal entry');
     }
-});
+  });
 
 // EDIT
 router.get('/journals/:id/edit', async (req, res) => {

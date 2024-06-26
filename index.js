@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override'); // PUT/DELETE requests
 const routes = require('./controllers/flow'); // Import router
+require('dotenv').config();
 const port = process.env.PORT || 3000;
 
 const Journal = require("./models/journal");
 
 
-const mongoURI = "mongodb://localhost:27017/journaling-app";
+const mongoURI = process.env.MONGOURI;
 
 async function connectToMongo() {
   try {
