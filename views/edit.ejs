@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Journal Entry</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <h1>EDIT ENTRY</h1>
+  <form action="/journals/<%= journal._id %>?_method=PUT" method="POST">
+    <label for="date">DATE:</label>
+    <input type="date" name="date" value="<%= journal.date %>" required><br>
+    <label for="time">TIME:</label>
+    <input type="time" name="time" value="<%= journal.time %>"><br>
+    <label for="mood">MOOD:</label>
+    <input type="text" name="mood" value="<%= journal.mood %>"><br>
+    <label for="song">SONG:</label>
+    <input type="text" name="song" value="<%= journal.song %>"><br>
+    <label for="subject">SUBJECT:</label>
+    <input type="text" name="subject" value="<%= journal.subject %>" required><br>
+    <label for="entry">ENTRY:</label>
+    <textarea name="entry" class="notebook-textarea"><%= journal.entry %></textarea><br>
+    <button type="submit">Update Entry</button>
+  </form>
+  <a href="/journals">Back to all entries</a>
+</body>
+</html>

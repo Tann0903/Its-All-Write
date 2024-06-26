@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Entries</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <div class="container">
+        <a href="/journals/new" class="new-entry-link">CREATE NEW ENTRY</a>
+        <ul class="journal-list">
+            <% 
+              // I wanted to list the entries in order using date and time
+              journals.sort((a, b) => {
+                const datetimeA = `${a.date}T${a.time}`;
+                const datetimeB = `${b.date}T${b.time}`;
+                return datetimeB.localeCompare(datetimeA); 
+              });
+
+              journals.forEach(journal => { %>
+                <li class="journal-item">
+                  <a href="/journals/<%= journal._id %>">
+                    <%= journal.date %> <%= journal.time %>: <%= journal.subject %>
+                  </a>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

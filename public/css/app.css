@@ -1,0 +1,58 @@
+body {
+    background-image: url(notebook.jpeg);
+    margin: 0;
+    background-color: black;
+    color: rgb(8, 230, 219);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    background-size: cover;
+    background-repeat: repeat;
+  }
+  
+  h1 {
+    font-family:fantasy;
+    background: black;
+    text-align: center;
+  }
+  
+  a {
+    color: yellow;
+    text-decoration: none;
+    font-size: 1.5em;
+    background: black;
+  }
+  
+  a:hover {
+    color: green;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  input[type=submit] {
+    padding: .3em;
+    color: red;
+    background: black;
+    font-size: 1em;
+    border-radius: 10%;
+  }
+  
+  .button-container {
+      text-align:end;
+      
+  }
+  
+  .notebook-textarea {
+      width: 96%;
+      height: 355px; 
+      padding: 20px; 
+      background-image: url('paper.webp');
+      background-size: cover;
+      background-repeat: repeat;
+      line-height: 1.6;
+      font-family: 'Arial', sans-serif;
+      font-size: 40px;
+      resize: vertical;
+    }

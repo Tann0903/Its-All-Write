@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Journal Entry</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <h1>NEW ENTRY</h1>
+  <form action="/journals" method="POST">
+    <label for="date">DATE:</label>
+    <input type="date" name="date" required><br>
+    <label for="time">TIME:</label>
+    <input type="time" name="time"><br>
+    <label for="mood">MOOD:</label>
+    <input type="text" name="mood"><br>
+    <label for="song">SONG:</label>
+    <input type="text" name="song"><br>
+    <label for="subject">SUBJECT:</label>
+    <input type="text" name="subject" required><br>
+    <label for="entry">ENTRY:</label>
+    <textarea name="entry" class="notebook-textarea" required></textarea><br>
+    <button type="submit">SUBMIT ENTRY</button>
+  </form>
+  <div class="button-container">
+  <a href="/journals">Back to all entries</a></div>
+
+</body>
+</html>
